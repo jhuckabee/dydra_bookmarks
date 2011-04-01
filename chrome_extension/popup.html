@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Dydra Bookmarks</title>
+    <link rel="stylesheet" type="text/css" href="css/dydra-chrome.css" />
+    <meta name="csrf-token" content=""/> 
+  </head>
+  <body onload="Dydra.bookmarks.popup.onload()">
+  <div id="wrapper">
+    <div id="signedOut" style="display:none;">
+      <h2>You are not signed in.</h2>
+      <p>You must be logged into your Dydra account to use this extension.</p>
+      <p><a href="#" class="login">Click here to sign in</a>
+    </div>
+    <div id="signedIn" style="display:none;">
+      <h1>Bookmark to Dydra</h1>
+      <div id="messages" style="display:none;"></div>
+      <form method="post" id="saveBookmark" class="saveBookmark">
+        <ul>
+          <li>
+            <label for="url">URL</label>
+            <input type="text" id="url" name="url" />
+          </li>
+          <li>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" />
+          </li>
+          <li>
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes"></textarea>
+          </li>
+          <li>
+            <label for="tags">Tags</label>
+            <input type="text" id="tags" name="tags" />
+          </li>
+          <li>
+            <input type="submit" id="save" value="Save" />
+            <input type="submit" id="cancel" value="Cancel" />
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script src="js/dydra.js"></script>
+  <script src="js/dydra-api.js"></script>
+  <script src="js/dydra-bookmarks.js"></script>
+  <script src="js/dydra-bookmarks-popup.js"></script>
+  </body>
+</html>

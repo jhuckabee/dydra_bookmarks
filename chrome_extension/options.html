@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Dydra bookmark settings</title>
+    <link rel="stylesheet" type="text/css" href="css/dydra-chrome.css" />
+  </head>
+  <body onload="Dydra.bookmarks.options.onload()">
+  <div id="wrapper" class="options">
+    <div id="signedOut" style="display:none;">
+      <h2>You are not signed in.</h2>
+      <p>You must be logged into your Dydra account to use this extension.</p>
+      <p><a href="#" class="login">Click here to sign in.</a></p>
+      <p><a href="#" class="reload">Click here to reload this page when you're done.</a></p>
+    </div>
+    <div id="signedIn" style="display:none;">
+      <h1>Dydra Bookmarks Settings</h1>
+      <div id="messages" style="display:none;"></div>
+      <form method="post" id="saveBookmark" class="saveBookmark">
+        <ul>
+          <li>
+            <label for="repository">Which repository would you like to store your bookmarks in?</label>
+            <select id="repository" name="repository"></select>
+          </li>
+          <li>
+            <label for="base_uri">Base URI</label>
+            <input type="text" id="base_uri" name="base_uri" />
+            <span class="help">Which base URI you would like to use.</span>
+          </li>
+          <li>
+            <label for="title">Context</label>
+            <input type="text" id="context" name="context" />
+            <span class="help">Named graph to store bookmarks in.</span>
+          </li>
+          <li>
+            <input type="submit" id="save" value="Save" />
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script src="js/dydra.js"></script>
+  <script src="js/dydra-api.js"></script>
+  <script src="js/dydra-bookmarks.js"></script>
+  <script src="js/dydra-bookmarks-options.js"></script>
+  </body>
+</html>

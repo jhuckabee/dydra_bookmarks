@@ -1,0 +1,23 @@
+{
+  "name": "Dydra Bookmarks",
+  "version": "0.1",
+  "description": "Store your bookmarks in RDF on Dydra.com",
+  "permissions": [
+    "bookmarks", "tabs", "http://dydra.dev/"
+  ],
+  "icons": {
+    "16": "img/dydra_icon_16_x_16.png",
+    "48": "img/dydra_icon_48_x_48.png",
+    "128": "img/dydra_icon_128_x_128.png"
+  },
+  "background_page": "background.html",
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": ["js/dydra.js", "js/content-script.js"]
+  }],
+  "browser_action": {
+    "default_icon": "img/dydra_icon_48_x_48.png",
+    "popup": "popup.html"
+  },
+  "options_page": "options.html"
+}

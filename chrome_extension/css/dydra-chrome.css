@@ -1,0 +1,44 @@
+body {
+  color: #333;
+  height: 50px;
+  font-family: sans-serif; }
+
+#wrapper {
+  width: 350px;
+  padding-bottom: 5px; }
+  #wrapper h1 {
+    border-bottom: solid 1px #999;
+    padding-bottom: 3px;
+    font-size: 14px; }
+  #wrapper #messages {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 10px;
+    background: #CCC;
+    border: solid 1px #CCC;
+    -webkit-border-radius: 4px; }
+  #wrapper ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    #wrapper ul li {
+      font-size: 13px;
+      margin-bottom: 10px; }
+    #wrapper ul li label {
+      display:block; }
+    #wrapper ul li input[type=text], 
+    #wrapper ul li textarea {
+      border: solid 1px #999;
+      padding: 3px;
+      width: 100%;
+      display:block; }
+    #wrapper ul li span.help {
+      font-size: 10px; }
+
+div.options {
+  background: #F3F3F3;
+  border: solid 5px #DDD;
+  padding: 10px;
+  -webkit-border-radius: 4px;
+  margin: 15px auto; }
