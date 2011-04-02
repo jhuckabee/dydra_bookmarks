@@ -1,18 +1,3 @@
-function CSRFProtection(fn) {
-  var token = $('meta[name="csrf-token"]').attr('content');
-  if (token) fn(function(xhr) { xhr.setRequestHeader('X-CSRF-Token', token) });
-}
-var factory = $.ajaxSettings.xhr;
-$.ajaxSettings.xhr = function() {
-  var xhr = factory();
-  var open = xhr.open;
-  CSRFProtection(function(setHeader) {
-    var open = xhr.open;
-    xhr.open = function() { open.apply(this, arguments); setHeader(this) };
-  })
-  return xhr;
-};
-
 Dydra.my_account = function(options) {
   $.ajax({
     url: Dydra.HOST + 'my_account.json', 

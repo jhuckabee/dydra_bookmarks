@@ -7,4 +7,3 @@ var Dydra = {
     GET_AUTH: 'getAuth'
   }
 };
-

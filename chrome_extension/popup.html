@@ -1,5 +1,15 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:rss="http://purl.org/rss/1.0/item/"
+  xmlns:tags="http://www.holygoat.co.uk/owl/redwood/0.1/tags/">
   <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <title>Dydra Bookmarks</title>
     <link rel="stylesheet" type="text/css" href="css/dydra-chrome.css" />
     <meta name="csrf-token" content=""/> 
@@ -14,19 +24,19 @@
     <div id="signedIn" style="display:none;">
       <h1>Bookmark to Dydra</h1>
       <div id="messages" style="display:none;"></div>
-      <form method="post" id="saveBookmark" class="saveBookmark">
+      <form method="post" id="saveBookmark" class="saveBookmark" typeof="rss:item">
         <ul>
           <li>
             <label for="url">URL</label>
-            <input type="text" id="url" name="url" />
+            <input type="text" id="url" name="url" about="" />
           </li>
           <li>
             <label for="title">Title</label>
-            <input type="text" id="title" name="title" />
+            <input type="text" id="title" name="title" property="dc:title" />
           </li>
           <li>
             <label for="notes">Notes</label>
-            <textarea id="notes" name="notes"></textarea>
+            <textarea id="notes" name="notes" property="rdfs:comment"></textarea>
           </li>
           <li>
             <label for="tags">Tags</label>
@@ -37,10 +47,16 @@
             <input type="submit" id="cancel" value="Cancel" />
           </li>
         </ul>
+        <div style="display:none;">
+          <span id="taggedOn" property="tags:TaggedOn" datatype="xsd:Datetime"></span>
+          <div id="tagHolder"></div>
+        </div>
       </form>
+      <div style="display:none;" id="tagContainer"></div>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script src="js/jquery.rdfquery.rules-1.0.js"></script>
   <script src="js/dydra.js"></script>
   <script src="js/dydra-api.js"></script>
   <script src="js/dydra-bookmarks.js"></script>
