@@ -109,7 +109,7 @@ Dydra.bookmarks.popup.formValuesToRDFa = function() {
   $('#tagHolder').html('');
   $('#tags').val().split(' ').forEach(function(tag) {
     if(tag.length > 0) {
-      var tagURI = 'http://dydra.com/jhuckabee/bookmarks/#'+tag,
+      var tagURI = Dydra.bookmarks.getOption('base_uri')+ '#'+tag,
           tagID = 'tag_'+tag,
           tagName,
           tagElement;
@@ -120,7 +120,7 @@ Dydra.bookmarks.popup.formValuesToRDFa = function() {
         '</div>'
       ].join('');
       $('#tagContainer').html(tagElement);
-      $('#tagHolder').append($('<span>').attr('property', 'tags:taggedWithTag').html(tagURI));
+      $('#tagHolder').append($('<span>').attr('rel', 'tags:taggedWithTag').attr('resource', tagURI));
     }
   });
 };

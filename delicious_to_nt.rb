@@ -36,7 +36,7 @@ RDF::NTriples::Writer.open('bookmarks.nt') do |writer|
         el.attributes['tags'].value.split(',').collect{|tag| tag if tag.length > 0}.compact.each do |tag|
           if tags[tag].nil?
             tags[tag] = BASE_URI / ("##{tag}")
-            graph << [tags[tag], RDFS.a, TAGS.Tag]
+            graph << [tags[tag], RDF.type, TAGS.Tag]
             graph << [tags[tag], TAGS.tagName, tag]
           end
           graph << [resource, TAGS.taggedWithTag, tags[tag]]
